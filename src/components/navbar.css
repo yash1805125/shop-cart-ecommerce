@@ -1,9 +1,9 @@
 .navbar {
   width: 100%;
-  height: 80px;
+  height: 100px;
   background-color: rgb(19, 19, 19);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -11,6 +11,7 @@
   margin-right: 50px;
   display: flex;
   align-items: center;
+  margin-top: 0px;
 }
 
 .links a {
@@ -18,4 +19,11 @@
   color: white;
   margin-left: 20px;
   font-size: 25px;
+}
+
+.shopTitle {
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  margin-left: 40px;
 }
