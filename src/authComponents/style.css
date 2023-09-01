@@ -1,0 +1,51 @@
+.fix-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.auth-form-container,
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: white;
+}
+
+.auth-form-container {
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+label {
+  margin: 10px 0px;
+  text-align: left;
+  font-size: 17px;
+}
+
+.fix-input {
+  margin: 2px 0px;
+  height: 25px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.l1 {
+  margin: 20px 0px;
+  padding: 13px 0px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link {
+  border: none;
+  background: none;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}

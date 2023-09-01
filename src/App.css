@@ -3,6 +3,9 @@
   height: auto;
   min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 body {
