@@ -32,9 +32,9 @@ function App() {
           </Routes>
 
           <Routes>
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop" element={<Shop user={userName} />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart user={userName} />} />
           </Routes>
         </Router>
       </ShopContextProvider>
