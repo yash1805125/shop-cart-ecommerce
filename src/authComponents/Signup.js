@@ -22,36 +22,15 @@ const Signup = () => {
         });
         navigate("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err);
+        console.log(err);
+      });
   };
 
   const handleSubmit = (e) => e.preventDefault();
 
   return (
-    // <div className="fix-form">
-    //   <input
-    //     type="text"
-    //     placeholder="type name"
-    //     value={name}
-    //     onChange={(e) => setName(e.target.value)}
-    //   />
-    //   <input
-    //     type="text"
-    //     placeholder="type email"
-    //     value={email}
-    //     onChange={(e) => setEmail(e.target.value)}
-    //   />
-    //   <input
-    //     type="password"
-    //     placeholder="type password"
-    //     value={password}
-    //     onChange={(e) => setPassword(e.target.value)}
-    //   />
-
-    //   <div>
-    //     <button onClick={handleSubmit}>Signup</button>
-    //   </div>
-    // </div>
     <div className="fix-div">
       <div className="auth-form-container">
         <h2 style={{ color: "black" }}>Signup</h2>
@@ -95,7 +74,7 @@ const Signup = () => {
             type="submit"
             onClick={handleSignup}
           >
-            Log In
+            Signup
           </button>
         </form>
 

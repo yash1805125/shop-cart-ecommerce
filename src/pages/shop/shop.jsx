@@ -3,11 +3,13 @@ import { PRODUCTS } from "../../products";
 import { Product } from "./product";
 import "./shop.css";
 import { Navbar } from "../../components/navbar";
+import { useNavigate } from "react-router-dom";
 
-export const Shop = () => {
+export const Shop = (props) => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [categoryProds, setCategoryProds] = useState([]);
+  const navigate = useNavigate();
 
   const handleCategory = (e) => {
     const cat = e.target.value;
@@ -25,60 +27,70 @@ export const Shop = () => {
   };
 
   return (
-    <div className="shop">
-      <Navbar />
-      <div className="top-bar">
-        <div className="dummy">
-          <input />
-        </div>
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search for an item"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="input-field"
-          />
-        </div>
+    <div>
+      {props.user.length !== 0 ? (
+        <div className="shop">
+          <Navbar name={props.user} />
+          <div className="top-bar">
+            <div className="dummy">
+              <input />
+            </div>
+            <div className="search-bar">
+              <input
+                type="text"
+                placeholder="Search for an item"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="input-field"
+              />
+            </div>
 
-        <div className="filter-options">
-          <select className="filter" value={category} onChange={handleCategory}>
-            <option>Filter categories</option>
-            <option>electronics</option>
-            <option>jewelery</option>
-            <option>men's clothing</option>
-            <option>women's clothing</option>
-          </select>
-        </div>
-      </div>
+            <div className="filter-options">
+              <select
+                className="filter"
+                value={category}
+                onChange={handleCategory}
+              >
+                <option>Filter categories</option>
+                <option>electronics</option>
+                <option>jewelery</option>
+                <option>men's clothing</option>
+                <option>women's clothing</option>
+              </select>
+            </div>
+          </div>
 
-      <div className="products">
-        <div className="fix-search-items">
-          {search.length === 0 && category === "" ? (
-            PRODUCTS.map((product) => <Product data={product} />)
-          ) : category && search.length === 0 ? (
-            categoryProds.map((product) => <Product data={product} />)
-          ) : category && search.length !== 0 ? (
-            categoryProds.map((product) =>
-              product.title.toLowerCase().includes(search.toLowerCase()) ? (
-                <Product data={product} />
+          <div className="products">
+            <div className="fix-search-items">
+              {search.length === 0 && category === "" ? (
+                PRODUCTS.map((product) => <Product data={product} />)
+              ) : category && search.length === 0 ? (
+                categoryProds.map((product) => <Product data={product} />)
+              ) : category && search.length !== 0 ? (
+                categoryProds.map((product) =>
+                  product.title.toLowerCase().includes(search.toLowerCase()) ? (
+                    <Product data={product} />
+                  ) : (
+                    <div></div>
+                  )
+                )
+              ) : !category && search.length !== 0 ? (
+                PRODUCTS.map((product) =>
+                  product.title.toLowerCase().includes(search.toLowerCase()) ? (
+                    <Product data={product} />
+                  ) : (
+                    <div></div>
+                  )
+                )
               ) : (
-                <div></div>
-              )
-            )
-          ) : !category && search.length !== 0 ? (
-            PRODUCTS.map((product) =>
-              product.title.toLowerCase().includes(search.toLowerCase()) ? (
-                <Product data={product} />
-              ) : (
-                <div></div>
-              )
-            )
-          ) : (
-            <div>Enjoy</div>
-          )}
+                <div>Enjoy</div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      ) : (
+        navigate("/")
+      )}
     </div>
   );
 };
