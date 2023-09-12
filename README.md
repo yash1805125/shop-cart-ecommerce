@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Live Project on [shop-cart-ecommerce-react](https://shop-cart-react-ecommerce.netlify.app/).
+## Live Project on [myshop-cart-ecommerce-react](https://myshop-cart-react.netlify.app/).
 ## Available Scripts
 
 In the project directory, you can run:
