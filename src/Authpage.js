@@ -3,7 +3,12 @@ import Startfile from "./startfile";
 import { Link } from "react-router-dom";
 
 const Authpage = ({ name }) => {
-  console.log(name);
+  console.log("Hi", name);
+  function handleReload() {
+    if (name == null || name) window.location.reload();
+    else return alert("Please login/signup");
+  }
+
   return (
     <div>
       {name ? (
@@ -37,6 +42,12 @@ const Authpage = ({ name }) => {
                   Signup
                 </Link>
               </h2>
+            </div>
+
+            <div>
+              <button className="fix-homebutton" onClick={handleReload}>
+                Go To Homepage
+              </button>
             </div>
             <br />
             <br />

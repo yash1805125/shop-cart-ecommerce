@@ -17,7 +17,7 @@ export const Cart = (props) => {
     <div>
       {props.user.length !== 0 ? (
         <div className="cart">
-          <Navbar />
+          <Navbar name={props.user} />
           <div>
             <h1>Your Cart Items</h1>
           </div>
@@ -41,7 +41,7 @@ export const Cart = (props) => {
               </button>
               <button
                 onClick={() => {
-                  checkout();
+                  // checkout();
                   navigate("/checkout");
                 }}
               >

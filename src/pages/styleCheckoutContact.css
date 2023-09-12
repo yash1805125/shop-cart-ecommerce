@@ -1,0 +1,94 @@
+.fix-checkout-outer {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fix-checkout-inner-left {
+  flex: 0.5;
+}
+
+.fix-checkout-inner-right {
+  flex: 0.5;
+}
+
+.display-items {
+  display: flex;
+}
+
+.display-i {
+  flex-basis: 60%;
+  padding: 10px 5px;
+}
+
+.display-j {
+  padding: 10px 5px;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fix-total {
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.billing-border {
+  margin: 7px;
+  border: 2px solid rgb(180, 175, 175);
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.underline-border {
+  border-bottom: 2px solid greenyellow;
+}
+
+.checkout-button {
+  padding: 10px;
+  border-radius: 4px;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #21ba45;
+  color: white;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.fix-all-input-div {
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fix-fields {
+  display: flex;
+}
+
+.fix-all-input {
+  display: flex;
+  height: 35px;
+  width: 350px;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+
+.fix-all-input-last {
+  /* display: flex; */
+  height: 35px;
+  width: 225px;
+  padding-left: 10px;
+  /* justify-content: space-between; */
+}
+
+.fix-payment-fields {
+  height: 28px;
+  width: 200px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+}
