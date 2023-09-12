@@ -9,15 +9,21 @@ import { Shop } from "./pages/shop/shop";
 import { Contact } from "./pages/contact";
 import { Cart } from "./pages/cart/cart";
 import { ShopContextProvider } from "./context/shop-context";
+import Checkout from "./pages/checkout";
 
 function App() {
   const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
         setUserName(user.displayName);
-      } else setUserName("");
+        setUserEmail(user.email);
+      } else {
+        setUserName("");
+        setUserEmail("");
+      }
     });
   }, [userName]);
 
@@ -35,6 +41,10 @@ function App() {
             <Route path="/shop" element={<Shop user={userName} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart user={userName} />} />
+            <Route
+              path="/checkout"
+              element={<Checkout user={userName} email={userEmail} />}
+            />
           </Routes>
         </Router>
       </ShopContextProvider>
