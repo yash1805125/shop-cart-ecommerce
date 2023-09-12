@@ -374,7 +374,7 @@ const Checkout = ({ user, email }) => {
             </div>
           </div>
           <div>
-            <button className="checkout-button">
+            <button className="checkout-button" onClick={() => checkout()}>
               <b>Complete Checkout & Pay</b>
             </button>
           </div>
